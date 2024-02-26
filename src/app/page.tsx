@@ -1,14 +1,16 @@
 import Accordion from "./components/Accordion";
 import Carousels from "./components/Carousels";
-import Navbar from "./components/Navbar";
+import Input from "./components/Input";
 import Tab from "./components/Tab";
+import Toggle from "./components/Toggle";
+import User from "./components/User";
 
 interface CombinerProps{
   name : string
   component : React.JSX.Element
 }
 
-function Combiner({name,component}:CombinerProps){
+export function Section({name,component}:CombinerProps){
   return (
     <div className="mt-6 h-fit bg-[#424242] w-full flex flex-col rounded-md">
       <div className="flex px-6 h-16 border-b-[1px] border-solid border-b-[#1f1f1f] items-center">
@@ -24,14 +26,16 @@ function Combiner({name,component}:CombinerProps){
 
 export default function Home() {
   return (
-    <main className="">
-      <Navbar/>
-      <div className="mt-20">
+    <main>
+      <div className="mt-12 pt-12">
         <h1 className="w-full text-white text-xl md:text-2xl font-sans font-bold flex items-center justify-center">Components</h1>
         <div className="px-8 my-8 flex gap-12 flex-col">
-          <Combiner name="Accordion" component={<Accordion/>}/>
-          <Combiner name="Tab" component={<Tab />}/>
-          <Combiner name="Carousels" component={<Carousels />}/>
+          <Section name="Accordion" component={<Accordion/>}/>
+          <Section name="Tab" component={<Tab />}/>
+          <Section name="Carousels" component={<Carousels />}/>
+          <Section name="User info and controls" component={<User/>}/>
+          <Section name="Toggle/Toggle with icon" component={<Toggle/>}/>
+          <Section name="Form Element" component={<Input/>}/>
         </div>
       </div>
     </main>
