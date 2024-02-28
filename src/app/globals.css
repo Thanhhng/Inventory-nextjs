@@ -56,3 +56,14 @@ table {
 	border-right: 10px solid transparent;
 	border-top: 15px solid white;
 }
+
+.DropDownToolTip{
+	position: absolute;
+	width: 0;
+	left: 50%;
+	bottom:92%;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 15px solid white;
+}

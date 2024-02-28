@@ -8,7 +8,7 @@ function Navbar() {
           <div className="py-4 flex items-center justify-between gap-2 w-full">
             <div className="flex gap-1 items-center justify-center pl-4">
               <Image src="/chest-gold-svgrepo-com.svg" alt="logo" width={40} height={40} className=' cursor-pointer'/>
-              <h1 className=" mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-pink-300 tracking-tight text-softWhite hover:text-white sm:text-xl cursor-pointer">Inventory</h1>
+              <h1 className=" mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500 tracking-tight text-softWhite hover:text-white sm:text-xl cursor-pointer">Inventory</h1>
             </div>
             <ul className='flex flex-cols gap-6 pr-4 text-gray-300'>
                 <li className=" text-lg text-gray-300 hover:text-white cursor-pointer">About Me</li>
