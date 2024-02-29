@@ -26,10 +26,10 @@ function UserCard(){
 
 function User() {
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col sm:flex-row gap-4 sm:justify-around items-center justify-center'>
       <button className='text-gray-300 hover:bg-[white] hover:text-black border-[1px] w-full sm:w-fit border-solid rounded-md '>
         <div className='flex justify-between items-center w-full px-4 sm:h-min'>
-          <div className='flex gap-4 rounded px-6 py-4 '>
+          <div className='flex gap-4 rounded px-6 py-4 justify-between'>
             <Image src={'https://picsum.photos/id/237/200/300'} height={40} width={40} alt='random-img' className='w-12 h-12 rounded-full'></Image>
             <div className='flex flex-col my-auto h-full items-start'>
               <h4 className='text-xl text-bold'>Lorem</h4>
@@ -39,7 +39,6 @@ function User() {
           <Image src="/right.svg" height={40} width={40} alt='picture' className='cursor-pointer '></Image>
         </div>
       </button>
-      <hr className='w-[100%] px-12 my-6 sm:w-8/12 sm:m-auto sm:my-6'/>
       <UserCard/>
     </div>
   )

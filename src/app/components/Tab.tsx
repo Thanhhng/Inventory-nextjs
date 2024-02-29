@@ -14,12 +14,12 @@ function Tab() {
         setCurrentTab(index)
     }
     return (
-        <div className='text-white w-full flex items-center justify-center'>
+        <div className=' w-full flex items-center justify-center text-gray-300'>
             <div className='w-[40rem] flex flex-col gap-4 border border-white border-solid'>
                 <div className='flex items-center justify-around '>
                     {tabName.map((e,index) => {
                         return (
-                            <button key={index} onClick={() => handleClick(index)} className={`${currentTab === index ? "bg-white text-black" : ""} h-12  w-full border border-white cursor-pointer text-md lg:text-xl`}>{e}</button>
+                            <button key={index} onClick={() => handleClick(index)} className={`${currentTab === index ? "bg-white text-black" : ""}  h-12  w-full border border-white cursor-pointer text-md lg:text-xl `}>{e}</button>
                         )
                     })}
                 </div>
@@ -27,7 +27,7 @@ function Tab() {
                     {
                         tabContent.map((e,index) => {
                             return (
-                                <div key={index} className={`${currentTab !== index ? "hidden" : "block"}`}>
+                                <div key={index} className={` text-gray-300 ${currentTab !== index ? "hidden" : "block"} p-4`}>
                                     <p>{e}</p>
                                 </div>
                             )

@@ -2,7 +2,7 @@
 import { AnimatePresence, easeIn, easeInOut, motion } from 'framer-motion'
 import React, { useState } from 'react'
 
-const content = ["Option 1","Option 2 " ,"Option 3"]
+const content = ["Edit","Delete" ,"Add","Adjust"]
 
 function Dropdown() {
 
@@ -17,7 +17,7 @@ function Dropdown() {
               {
                 content.map((e:any,index:number) => {
                   return (
-                    <motion.div initial={{x:-100,opacity:0}} animate={{x:isDropDownOpen ? 0 : -100,opacity:isDropDownOpen ? 1 : 0}} transition={{duration:0.3,ease:'easeInOut'}} exit={{opacity:0}} key={index} className={`w-[14rem] rounded-md h-12 z-[2] flex justify-start px-4 items-center border-solid border-black text-black cursor-pointer hover:bg-[#e2e8f0]`}>{e}</motion.div>
+                    <motion.div initial={{x:-70,opacity:0}} animate={{x:isDropDownOpen ? 0 : -70,opacity:isDropDownOpen ? 1 : 0}} transition={{duration:0.3,ease:'easeInOut'}} exit={{opacity:0}} key={index} className={`w-[14rem] rounded-md h-12 z-[2] flex justify-start px-4 items-center border-solid border-black text-black cursor-pointer hover:bg-[#e2e8f0]`}>{e}</motion.div>
                   )
                 })
               }

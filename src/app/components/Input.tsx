@@ -13,11 +13,11 @@ function Input() {
     return (
         <div className='text-white flex flex-col gap-4 items-center sm:justify-between sm:flex-row z-[2]'>
             <form className='flex flex-col w-full justify-center items-center gap-8' onSubmit={(e) => e.preventDefault()}>
-                <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-2'>
                     <p className='text-md px-2'>Input(Text)</p>
                     <input type='text' className='mx-2 text-black text-sm md:text-md font-semibold w-60 px-4 h-[2.5rem] border-solid border-[1px] z-[1] rounded-md border-white' placeholder='Please input your name'></input>
                 </div>
-                <div className='flex flex-col gap-4 relative'>
+                <div className='flex flex-col gap-2 relative'>
                     <p className='text-md px-2'>Input(password)</p>
                     <div className='relative w-fit h-fit'>
                         <input type={isShow ? 'text':'password'} className='mx-2 text-black text-sm md:text-md font-semibold w-60 shadow-2xl pl-4 pr- h-[2.5rem] border-solid border-[1px] rounded-md border-white outline-none ' placeholder='Input your password'></input>
@@ -51,13 +51,13 @@ function Input() {
                                         <p className='text-md md:text-lg font-bold'>Login</p>
                                         <button onClick={() => {closeModal()}} className='cursor-pointer text-md md:text-lg'>X</button>
                                     </div>
-                                    <div className='flex flex-col gap-4 px-4 '>
+                                    <div className='flex flex-col gap-2 px-4 '>
                                         <div className='flex gap-1'>
                                             <p className='text-md'>User Name</p><span className='text-red-400 text-md'>*</span>
                                         </div>
                                         <input type='text' className='w-full text-black text-sm md:text-md font-semibold shadow-2xl px-4 h-[2.5rem] border-solid border-[1px] rounded-md border-white outline-none' placeholder='Please input your name'></input>
                                     </div>
-                                    <div className='flex flex-col gap-4 px-4'>
+                                    <div className='flex flex-col gap-2 px-4'>
                                         <div className='flex gap-1'>
                                             <p className='text-md'>Password</p><span className='text-red-400 text-md'>*</span>
                                         </div>
@@ -66,7 +66,7 @@ function Input() {
                                             <Image onClick={() => {setIsShow(!isShow)}} src={isShow ? "/eye-open-svgrepo-com.svg" : "/eye-close-svgrepo-com.svg"} width={20} height={20} alt='eyes-svg' className='absolute z-[5] cursor-pointer left-[85%] top-[0.7rem]'/>
                                         </div>
                                     </div>
-                                    <div className='flex items-center justify-center mt-4 w-full px-4'>
+                                    <div className='flex items-center justify-center w-full px-4 mt-4'>
                                         <button onClick={() => console.log("clicked")} className='w-full min-w-fit bg-blue-500  text-white text-sm md:text-md font-medium my-2 w-50 shadow-2xl px-4 h-[2.5rem] text-md rounded-md hover:bg-blue-700 hover:text-white hover:border-none'>
                                             Login
                                         </button>

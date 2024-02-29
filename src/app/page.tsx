@@ -3,6 +3,7 @@ import Carousels from "./components/Carousels";
 import Dropdown from "./components/Dropdown";
 import Input from "./components/Input";
 import Tab from "./components/Tab";
+import Toast from "./components/Toast";
 import Toggle from "./components/Toggle";
 import User from "./components/User";
 
@@ -30,15 +31,16 @@ export default function Home() {
   return (
     <main>
       <div className="mt-12 pt-12">
-        <h1 className="w-full text-white text-xl md:text-2xl font-sans font-bold flex items-center justify-center">Components</h1>
+        <h1 className="w-full text-xl md:text-2xl font-sans font-bold flex items-center justify-center text-gray-300">Components</h1>
         <div className="px-8 my-8 flex gap-12 flex-col">
           <Section name="Accordion" component={<Accordion/>}/>
           <Section name="Tab" component={<Tab />}/>
           <Section name="Carousels" component={<Carousels />}/>
-          <Section name="User info and controls" component={<User/>}/>
+          <Section name="Card" component={<User/>}/>
           <Section name="Toggle/Toggle with icon" component={<Toggle/>}/>
           <Section name="Form Element" component={<Input/>}/>
-          <Section name="Drop Down" component={<Dropdown/>} minH={"min-h-[17rem]"}/>
+          <Section name="Drop Down" component={<Dropdown/>}/>
+          <Section name="Toast" component={<Toast/>}/>
         </div>
       </div>
     </main>
