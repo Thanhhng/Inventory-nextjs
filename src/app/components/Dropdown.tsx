@@ -13,7 +13,7 @@ function Dropdown() {
         <AnimatePresence initial={false}>
           <motion.div className={`flex flex-col relative py-2 px-2 border-solid origin-top`} initial={{scale:0}} animate={{scale:isDropDownOpen ? 1 : 0}} transition={{duration:0.2,ease:easeInOut}} exit={{scaleY:0}}>
             <div className='DropDownToolTip'></div>
-            <div className='flex flex-col justify-center items-center rounded-md border-2 bg-white text-black py-2 px-2'>
+            <div className='flex flex-col justify-center items-center rounded-md border-2 bg-white text-black py-2 px-2 shadow-xl'>
               {
                 content.map((e:any,index:number) => {
                   return (

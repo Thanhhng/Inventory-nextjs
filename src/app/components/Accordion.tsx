@@ -1,10 +1,10 @@
 "use client"
 import { AnimatePresence, motion } from 'framer-motion';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface AccordionProps {
     accordionArr?: any[];
+    ref? : any
 }
 
 const accordionData = [
@@ -33,8 +33,7 @@ const accordionData = [
   ];
 
 
-
-function Accordion({ accordionArr=accordionData }: AccordionProps) {
+function Accordion({accordionArr=accordionData,ref}: AccordionProps) {
     const [currentVal, setCurrentVal] = useState<number | null>(null);
     function handleClick(index:number){
         setCurrentVal(currentVal === index ? null : index);
@@ -44,47 +43,49 @@ function Accordion({ accordionArr=accordionData }: AccordionProps) {
         const isOpen = currentVal === index;
         const iconSrc = isOpen ? '/minus-svgrepo-com.svg' : '/add-plus-svgrepo-com.svg';
         return (
-            <motion.div key={index} initial={{height:56}} animate={{ height: "auto" }}   transition={{  ease: "linear", duration:4}}            >
-                <motion.button layout onClick={() => handleClick(index)} className='w-full h-14 border border-white cursor-pointer flex justify-between items-center px-4'>
-                    <span>{e.title}</span>
-                    {
-                        <motion.img
-                            src={iconSrc} alt="logo" width={30} height={30}
-                            key={isOpen ? 'open' : 'close'}
-                            initial={{ y:10, opacity: 0, rotate: '0deg' }}
-                            animate={{ y:0, opacity: 1, rotate: '180deg' }}
-                            exit={{ y:-10, opacity: 0, rotate: '0deg' }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            {/* <Image src={iconSrc} alt="logo"  className='cursor-pointer'/> */}
-                        </motion.img>
-                    }
-                </motion.button>
-                <AnimatePresence initial={false}>
-                    {
-                        isOpen &&
-                        <motion.section
-                            key="content"
-                            initial="collapsed"
-                            animate="open"
-                            exit="collapsed"
-                            variants={{
-                                open: { opacity: 1, height: "auto" },
-                                collapsed: { opacity: 0, height: 0 }
-                            }}
-                            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-                        >
-                            <motion.div
-                                className=' p-4 text-md text-left leading-8'
-                                variants={{ collapsed: { scale: 0.8,  opacity: 0 }, open: { opacity: 1, scale: 1 } }}
+            <div key={index} ref={ref} >
+                <motion.div key={index} ref={ref} initial={{height:56}} animate={{ height: "auto" }}   transition={{  ease: "linear", duration:4}}            >
+                    <motion.button layout onClick={() => handleClick(index)} className='w-full h-14 border shadow-lg border-white cursor-pointer flex justify-between items-center px-4'>
+                        <span>{e.title}</span>
+                        {
+                            <motion.img
+                                src={iconSrc} alt="logo" width={30} height={30}
+                                key={isOpen ? 'open' : 'close'}
+                                initial={{ y:10, opacity: 0, rotate: '0deg' }}
+                                animate={{ y:0, opacity: 1, rotate: '180deg' }}
+                                exit={{ y:-10, opacity: 0, rotate: '0deg' }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                {/* <Image src={iconSrc} alt="logo"  className='cursor-pointer'/> */}
+                            </motion.img>
+                        }
+                    </motion.button>
+                    <AnimatePresence initial={false}>
+                        {
+                            isOpen &&
+                            <motion.section
+                                key="content"
+                                initial="collapsed"
+                                animate="open"
+                                exit="collapsed"
+                                variants={{
+                                    open: { opacity: 1, height: "auto" },
+                                    collapsed: { opacity: 0, height: 0 }
+                                }}
                                 transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
                             >
-                                {e.content}
-                            </motion.div>
-                        </motion.section>
-                    }
-                </AnimatePresence>
-            </motion.div>
+                                <motion.div
+                                    className=' p-4 text-md text-left leading-8'
+                                    variants={{ collapsed: { scale: 0.8,  opacity: 0 }, open: { opacity: 1, scale: 1 } }}
+                                    transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+                                >
+                                    {e.content}
+                                </motion.div>
+                            </motion.section>
+                        }
+                    </AnimatePresence>
+                </motion.div>
+            </div>
         )
     })
 

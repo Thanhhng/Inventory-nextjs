@@ -23,11 +23,11 @@ function ToggleSwitchWithIcon() {
   return (
     <button className="flex" onClick={() => {setIsOpen(!isOpen)}}>
       <div className={`relative h-8 w-14 rounded-2xl`}>
-        <motion.div animate={{x:btnMotion.location}} transition={{ duration:btnMotion.duration }}>
+        <motion.div animate={{x:btnMotion.location}} transition={{ duration:btnMotion.duration }} className="shadow-lg">
           <Image src={src} height={25} width={25} alt="chest" className={`max-w-fit max-h-fit absolute left-1 top-1 h-6 w-6 rounded-full transition-transform `}/>
         </motion.div>
-        <motion.div className="w-full h-full" initial={{ opacity: 0 }} animate={{opacity:1}} >
-          <Image src={`${isOpen ? "/dayBg.jpg" : "/nightBg.jpg"}`} height={25} width={25} alt="background" className={`w-full max-h-full rounded-full`}/>
+        <motion.div className="w-full h-full shadow-md shadow-black rounded-2xl" initial={{ opacity: 0 }} animate={{opacity:1}}>
+          <Image src={`${isOpen ? "/dayBg.jpg" : "/nightBg.jpg"}`} height={25} width={25} alt="background" className={`w-full  max-h-full rounded-full`}/>
         </motion.div>
       </div>
     </button>
