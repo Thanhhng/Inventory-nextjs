@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This Is my Project to display a few of my component i could do ( i'm using next js version 14 and tailwind + framer motion ) 
 
 ## Getting Started
 
