@@ -93,8 +93,8 @@ function Carousels() {
                 className={`sm:flex sm:items-center sm:justify-center absolute w-full`}>
                 <div className='w-full h-full sm:h-fit sm:w-fit relative'>
                   <motion.img custom={direction} key={currentPic} variants={variants} initial="initial" animate="animate" exit="exit" src={data[currentPic]?.image} height={200} width={200} alt='picture'  className='w-[30rem] h-[20rem] object-fill sm:w-[30rem] sm:h-[20rem] rounded-md shadow-lg'></motion.img>
-                  <Image onClick={() => handleClick("next")} src="/right.svg" height={50} width={50} alt='picture' className='absolute top-[40%] right-4   cursor-pointer hover:scale-125'></Image>
-                  <Image onClick={() => handleClick("prev")} src="/arrow-sm-left-svgrepo-com.svg" height={50} width={50} alt='picture' className='absolute top-[40%]  left-4  cursor-pointer hover:scale-125'></Image>
+                  <Image onClick={() => handleClick("next")} src="/right.svg" height={50} width={50} alt='picture' className='absolute top-[40%] right-4 shadow-md   cursor-pointer hover:scale-125'></Image>
+                  <Image onClick={() => handleClick("prev")} src="/arrow-sm-left-svgrepo-com.svg" height={50} width={50} alt='picture' className='absolute top-[40%] shadow-md  left-4  cursor-pointer hover:scale-125'></Image>
                   <div className='flex gap-4 relative w-full items-center justify-center bottom-6'>
                     {[...Array(6)].map((_, index) => (
                       <button

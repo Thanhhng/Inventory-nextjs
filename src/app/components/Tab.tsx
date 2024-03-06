@@ -14,9 +14,9 @@ function Tab() {
         setCurrentTab(index)
     }
     return (
-        <div className=' w-full flex items-center justify-center text-gray-300'>
-            <div className='w-[40rem] flex flex-col gap-4 border border-white border-solid shadow-md'>
-                <div className='flex items-center justify-around shadow-md'>
+        <div className=' w-full flex items-center justify-center text-gray-300 '>
+            <div className='w-[40rem] flex flex-col gap-4 border border-white border-solid'>
+                <div className='flex items-center justify-around shadow-lg'>
                     {tabName.map((e,index) => {
                         return (
                             <button key={index} onClick={() => handleClick(index)} className={`${currentTab === index ? "bg-white text-black" : ""}  h-12  w-full border border-white cursor-pointer text-md lg:text-xl shadow-md `}>{e}</button>

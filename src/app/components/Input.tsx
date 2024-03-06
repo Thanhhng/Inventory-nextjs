@@ -11,8 +11,8 @@ function Input() {
         setIsOpen(!isOpen)
     }
     return (
-        <div className='text-white flex flex-col gap-4 items-center sm:justify-between sm:flex-row z-[2]'>
-            <form className='flex flex-col w-full justify-center items-center gap-8' onSubmit={(e) => e.preventDefault()}>
+        <div className='text-white flex flex-col gap-4 items-center sm:justify-around sm:flex-row z-[2] '>
+            <form className='flex flex-col w-fit rounded shadow-2xl justify-center  px-4 gap-8  py-4 sm:items-center' onSubmit={(e) => e.preventDefault()}>
                 <div className='flex flex-col gap-2'>
                     <p className='text-md px-2'>Input(Text)</p>
                     <input type='text' className='mx-2 shadow-md text-black text-sm md:text-md font-semibold w-60 px-4 h-[2.5rem] border-solid border-[1px] z-[1] rounded-md border-white' placeholder='Please input your name'></input>
@@ -31,7 +31,7 @@ function Input() {
                     </button>
                 </div>
             </form>
-            <div className='w-full flex justify-center items-center gap-4 relative mt-12 sm:mt-0'>
+            <div className='w-fit flex justify-center items-center gap-4 relative mt-12 sm:mt-0'>
                 <button onClick={() => {setIsOpen(!isOpen)}} className='h-12 w-60 p-4  shadow-md rounded-md bg-blue-500 text-white text-md hover:bg-blue-700 relative group'>
                     Usage with Drawer
                     <div className="absolute invisible group-hover:visible bg-white text-black top-[-120%] text-xs rounded py-2 px-4 shadow-md left-[0,1%]">
