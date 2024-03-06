@@ -7,7 +7,7 @@ function HomePageButton({accordionRef}: {accordionRef:  RefObject<HTMLDivElement
         scrollToTargetAdjusted(accordionRef);
     };
     return (
-        <button onClick={scrollToAccordion} className='w-32 h-[2.5rem] text-[1rem] shadow-sm bg-gray-300 shadow-white text-gray-800 rounded-xl'>Explore</button>
+        <button onClick={scrollToAccordion} className='w-32 h-[2.5rem] text-[1rem] shadow-sm bg-white hover:bg-gray-200 shadow-white text-gray-800 rounded-xl'>Explore</button>
     )
 }
 

@@ -10,37 +10,13 @@ function Input() {
     function closeModal(){
         setIsOpen(!isOpen)
     }
-    return (
-        <div className='text-white flex flex-col gap-4 items-center sm:justify-around sm:flex-row z-[2] '>
-            <form className='flex flex-col w-fit rounded shadow-2xl justify-center  px-4 gap-8  py-4 sm:items-center' onSubmit={(e) => e.preventDefault()}>
-                <div className='flex flex-col gap-2'>
-                    <p className='text-md px-2'>Input(Text)</p>
-                    <input type='text' className='mx-2 shadow-md text-black text-sm md:text-md font-semibold w-60 px-4 h-[2.5rem] border-solid border-[1px] z-[1] rounded-md border-white' placeholder='Please input your name'></input>
-                </div>
-                <div className='flex flex-col gap-2 relative'>
-                    <p className='text-md px-2'>Input(password)</p>
-                    <div className='relative w-fit h-fit'>
-                        <input type={isShow ? 'text':'password'} className=' mx-2 text-black text-sm md:text-md font-semibold w-60 shadow-2xl pl-4 pr- h-[2.5rem] border-solid border-[1px] rounded-md border-white outline-none ' placeholder='Input your password'></input>
-                        <Image onClick={() => {setIsShow(!isShow)}} src={isShow ? "/eye-open-svgrepo-com.svg" : "/eye-close-svgrepo-com.svg"} width={20} height={20} alt='eyes-svg' className='absolute z-[5] cursor-pointer left-[85%] top-[0.7rem]'/>
-                    </div>
-                </div>
-                <div>
-                    <p className='text-md px-2'>Button</p>
-                    <button className='w-60 cursor-pointer bg-white mx-2 text-black  text-sm md:text-md font-medium my-2 w-50 shadow-2xl px-4 h-[2.5rem] border-solid border-[1px] rounded-md'>
-                        Submit
-                    </button>
-                </div>
-            </form>
-            <div className='w-fit flex justify-center items-center gap-4 relative mt-12 sm:mt-0'>
-                <button onClick={() => {setIsOpen(!isOpen)}} className='h-12 w-60 p-4  shadow-md rounded-md bg-blue-500 text-white text-md hover:bg-blue-700 relative group'>
-                    Usage with Drawer
-                    <div className="absolute invisible group-hover:visible bg-white text-black top-[-120%] text-xs rounded py-2 px-4 shadow-md left-[0,1%]">
-                        Click the button below to see how i use these input/button
-                        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 -mb-2 w-0 h-0 border-l-8 border-r-8 border-l-transparent border-r-transparent border-t-8 border-t-blue-500">
-                            <div className='tooltip'></div>
-                        </div>
-                    </div>
-                </button>
+
+    function displayDrawer() {
+        if (typeof window === 'undefined') {
+            return null;
+        }
+        return (
+            <>
                 {createPortal(
                     <div className={` my-6 w-full h-full ${isOpen ? "absolute z-10" : ""}`} >
                         <button onClick={() => closeModal()} className={`${isOpen ? "" : "hidden"} absolute text-white w-full opacity-70 bg-black z-20 h-full top-0 left-0 cursor-default `}></button>
@@ -77,6 +53,42 @@ function Input() {
                     </div>
                     ,document.body)
                 }
+            </>
+        )
+    }
+
+    return (
+        <div className='text-white flex flex-col gap-4 items-center sm:justify-around sm:flex-row z-[2] '>
+            <form className='flex flex-col w-fit rounded shadow-2xl justify-center  px-4 gap-8  py-4 sm:items-center' onSubmit={(e) => e.preventDefault()}>
+                <div className='flex flex-col gap-2'>
+                    <p className='text-md px-2'>Input(Text)</p>
+                    <input type='text' className='mx-2 shadow-md text-black text-sm md:text-md font-semibold w-60 px-4 h-[2.5rem] border-solid border-[1px] z-[1] rounded-md border-white' placeholder='Please input your name'></input>
+                </div>
+                <div className='flex flex-col gap-2 relative'>
+                    <p className='text-md px-2'>Input(password)</p>
+                    <div className='relative w-fit h-fit'>
+                        <input type={isShow ? 'text':'password'} className=' mx-2 text-black text-sm md:text-md font-semibold w-60 shadow-2xl pl-4 pr- h-[2.5rem] border-solid border-[1px] rounded-md border-white outline-none ' placeholder='Input your password'></input>
+                        <Image onClick={() => {setIsShow(!isShow)}} src={isShow ? "/eye-open-svgrepo-com.svg" : "/eye-close-svgrepo-com.svg"} width={20} height={20} alt='eyes-svg' className='absolute z-[5] cursor-pointer left-[85%] top-[0.7rem]'/>
+                    </div>
+                </div>
+                <div>
+                    <p className='text-md px-2'>Button</p>
+                    <button className='w-60 cursor-pointer bg-white mx-2 text-black  text-sm md:text-md font-medium my-2 w-50 shadow-2xl px-4 h-[2.5rem] border-solid border-[1px] rounded-md'>
+                        Submit
+                    </button>
+                </div>
+            </form>
+            <div className='w-fit flex justify-center items-center gap-4 relative mt-12 sm:mt-0'>
+                <button onClick={() => {setIsOpen(!isOpen)}} className='h-12 w-60 p-4  shadow-md rounded-md bg-blue-500 text-white text-md hover:bg-blue-700 relative group'>
+                    Usage with Drawer
+                    <div className="absolute invisible group-hover:visible bg-white text-black top-[-120%] text-xs rounded py-2 px-4 shadow-md left-[0,1%]">
+                        Click the button below to see how i use these input/button
+                        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 -mb-2 w-0 h-0 border-l-8 border-r-8 border-l-transparent border-r-transparent border-t-8 border-t-blue-500">
+                            <div className='tooltip'></div>
+                        </div>
+                    </div>
+                </button>
+                { displayDrawer() }
             </div>
         </div>
     )

@@ -10,7 +10,7 @@ import Toast from "./components/Toast";
 import Toggle from "./components/Toggle";
 import User from "./components/User";
 import Image from "next/image";
-import { RefObject, createContext, useEffect, useRef } from 'react';
+import { RefObject, useRef } from 'react';
 
 
 
@@ -22,7 +22,7 @@ interface CombinerProps{
 }
 
 
-export function Section({name,component,minH,forwardedRef}:CombinerProps){
+function Section({name,component,minH,forwardedRef}:CombinerProps){
   return (
     <div className="mt-6 h-fit bg-[#424242] w-full flex flex-col rounded-md shadow-md" ref={forwardedRef}>
       <div className="flex px-6 h-16 border-b-[1px] border-solid border-b-[#1f1f1f] items-center shadow-md">
